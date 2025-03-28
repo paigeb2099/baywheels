@@ -1,0 +1,1 @@
+select * from bike_route_startlocations where latitude = {{ mapboxMap1.selectedPoint.latitude }} and longitude = {{ mapboxMap1.selectedPoint.longitude }}

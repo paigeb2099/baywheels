@@ -1,0 +1,1 @@
+select * from bike_route_startlocations
