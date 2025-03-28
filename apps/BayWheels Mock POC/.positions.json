@@ -210,7 +210,6 @@
   "keyValue1": {
     "container": "container2",
     "subcontainer": "0a4f5",
-    "row": 0,
     "height": 8.6,
     "width": 11,
     "stackPosition": {
@@ -342,8 +341,7 @@
     "width": 2
   },
   "switch1": {
-    "row": 0.2,
-    "col": 10,
+    "col": 9,
     "height": 0.6,
     "width": 2
   },
@@ -379,7 +377,6 @@
   "textInput1": {
     "container": "container6",
     "subcontainer": "a7116",
-    "row": 0,
     "col": 3,
     "height": 0.2,
     "width": 4,
@@ -395,7 +392,6 @@
   "textInput2": {
     "container": "container6",
     "subcontainer": "a7116",
-    "row": 0,
     "height": 0.2,
     "stackPosition": {
       "object": {
@@ -421,7 +417,6 @@
   "textInput5": {
     "container": "container6",
     "subcontainer": "a7116",
-    "row": 0,
     "col": 7,
     "height": 0.2,
     "width": 4,

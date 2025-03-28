@@ -15,12 +15,6 @@
   </Header>
   <View id="a7116" viewKey="View 1">
     <TextInput
-      id="textInput5"
-      label="Search by Role"
-      labelPosition="top"
-      placeholder="Enter role"
-    />
-    <TextInput
       id="textInput2"
       label="Search by Email"
       labelPosition="top"
@@ -31,6 +25,12 @@
       label="Search by Name"
       labelPosition="top"
       placeholder="Enter name"
+    />
+    <TextInput
+      id="textInput5"
+      label="Search by Role"
+      labelPosition="top"
+      placeholder="Enter role"
     />
     <Table
       id="table1"
