@@ -29,7 +29,7 @@
     >
       <Option
         id="880c7"
-        icon="bold/interface-home-3"
+        icon="bold/interface-user-multiple"
         iconPosition="left"
         itemType="page"
         label="Memberships"
@@ -37,7 +37,7 @@
       />
       <Option
         id="b238f"
-        icon="bold/interface-user-multiple"
+        icon="bold/interface-alert-warning-triangle"
         iconPosition="left"
         itemType="page"
         label="Issues"
@@ -45,7 +45,7 @@
       />
       <Option
         id="e6d03"
-        icon="bold/interface-setting-cog"
+        icon="bold/money-graph"
         iconPosition="left"
         itemType="page"
         label="Analytics"
