@@ -1,0 +1,1 @@
+select SUM(bikes_available) from bike_station_data

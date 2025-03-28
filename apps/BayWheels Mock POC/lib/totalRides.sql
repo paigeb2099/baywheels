@@ -1,0 +1,1 @@
+Select SUM(rides_from_station) + SUM(rides_to_station) as total_rides from bike_station_data 
