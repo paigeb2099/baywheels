@@ -58,21 +58,6 @@
     type="main"
   >
     <Statistic
-      id="statistic6"
-      currency="USD"
-      label="New Issues Today"
-      positiveTrend="{{ self.value >= 0 }}"
-      secondaryCurrency="USD"
-      secondaryEnableTrend={true}
-      secondaryFormattingStyle="percent"
-      secondaryPositiveTrend="{{ self.secondaryValue >= 0 }}"
-      secondaryShowSeparators={true}
-      secondarySignDisplay="trendArrows"
-      secondaryValue=""
-      showSeparators={true}
-      value="10"
-    />
-    <Statistic
       id="statistic4"
       currency="USD"
       label="Total Open Issues"
@@ -101,6 +86,21 @@
       secondaryValue=""
       showSeparators={true}
       value="35"
+    />
+    <Statistic
+      id="statistic6"
+      currency="USD"
+      label="New Issues Today"
+      positiveTrend="{{ self.value >= 0 }}"
+      secondaryCurrency="USD"
+      secondaryEnableTrend={true}
+      secondaryFormattingStyle="percent"
+      secondaryPositiveTrend="{{ self.secondaryValue >= 0 }}"
+      secondaryShowSeparators={true}
+      secondarySignDisplay="trendArrows"
+      secondaryValue=""
+      showSeparators={true}
+      value="10"
     />
     <Container
       id="container4"
