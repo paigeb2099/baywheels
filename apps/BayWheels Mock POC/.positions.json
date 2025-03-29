@@ -21,13 +21,13 @@
     "height": 1
   },
   "button4": {
-    "row": 12.4,
+    "row": 10,
     "col": 8,
     "height": 1,
     "width": 2
   },
   "button5": {
-    "row": 12.4,
+    "row": 10,
     "col": 10,
     "height": 1,
     "width": 2
@@ -89,10 +89,18 @@
     }
   },
   "container5": {
-    "row": 12.2,
+    "row": 9.8,
     "col": 8,
     "height": 0.2,
-    "width": 4
+    "width": 4,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
   },
   "container6": {
     "row": 1.6,
@@ -173,7 +181,15 @@
     "row": 2.6,
     "col": 8,
     "height": 0.2,
-    "width": 4
+    "width": 4,
+    "stackPosition": {
+      "object": {
+        "ordinal": 0,
+        "widthType": "fixed",
+        "width": 0,
+        "height": 0
+      }
+    }
   },
   "formButton1": {
     "container": "form1",
@@ -259,11 +275,6 @@
     "height": 0.8,
     "width": 1
   },
-  "numberInput1": {
-    "container": "form2",
-    "height": 0.2,
-    "width": 12
-  },
   "roleInput": {
     "container": "form1",
     "row": 0.6,
@@ -272,7 +283,13 @@
   },
   "select1": {
     "container": "form2",
-    "row": 0.6,
+    "row": 1,
+    "height": 0.2,
+    "width": 12
+  },
+  "select2": {
+    "container": "form2",
+    "row": 2,
     "height": 0.2,
     "width": 12
   },
@@ -402,18 +419,6 @@
       }
     }
   },
-  "textInput3": {
-    "container": "form2",
-    "row": 0.2,
-    "height": 0.2,
-    "width": 12
-  },
-  "textInput4": {
-    "container": "form2",
-    "row": 0.4,
-    "height": 0.2,
-    "width": 11
-  },
   "textInput5": {
     "container": "container6",
     "subcontainer": "a7116",
@@ -428,5 +433,10 @@
         "height": 0
       }
     }
+  },
+  "textInput6": {
+    "container": "form2",
+    "height": 0.2,
+    "width": 12
   }
 }
