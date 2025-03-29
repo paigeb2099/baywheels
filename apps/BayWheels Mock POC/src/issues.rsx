@@ -12,9 +12,9 @@
   <RESTQuery
     id="updateIssue"
     body={
-      '[{"key":"email","value":"{{ textInput4.value }}","operation":"text"},{"key":"status","value":"{{ select1.value }}","operation":"text"}]'
+      '[{"key":"Status","value":"{{ select1.value }}"},{"key":"Problem","value":"{{ select2.value }}"},{"key":"Email","value":"{{ textInput6.value }}"}]'
     }
-    bodyType="form-data"
+    bodyType="json"
     headers="[]"
     isMultiplayerEdited={false}
     notificationDuration={4.5}
@@ -29,25 +29,23 @@
     <Event
       event="success"
       method="trigger"
-      params={{
-        ordered: [
-          {
-            options: {
-              ordered: [
-                { onSuccess: null },
-                { onFailure: null },
-                { additionalScope: null },
-              ],
-            },
-          },
-        ],
-      }}
+      params={{ ordered: [] }}
       pluginId="getIssues"
       type="datasource"
       waitMs="0"
       waitType="debounce"
     />
+    <Event
+      event="success"
+      method="confetti"
+      params={{ ordered: [] }}
+      pluginId=""
+      type="util"
+      waitMs="0"
+      waitType="debounce"
+    />
   </RESTQuery>
+  <connectResource id="query15" _componentId={null} />
   <Frame
     id="$main2"
     enableFullBleed={false}
@@ -126,6 +124,7 @@
           defaultSelectedRow={{ mode: "none", indexType: "display", index: 0 }}
           emptyMessage="No rows found"
           enableSaveActions={true}
+          primaryKeyColumnId="e7f24"
           showBorder={true}
           showFooter={true}
           showHeader={true}
@@ -134,54 +133,67 @@
           <Column
             id="e7f24"
             alignment="right"
+            editable={false}
             editableOptions={{ showStepper: true }}
             format="decimal"
             formatOptions={{ showSeparators: true, notation: "standard" }}
             groupAggregationMode="sum"
             key="id"
-            label="ID"
+            label="Issue ID"
             placeholder="Enter value"
             position="center"
-            size={31.546875}
+            size={108.546875}
             summaryAggregationMode="none"
           />
           <Column
-            id="ca9af"
+            id="551b4"
             alignment="left"
             format="link"
-            formatOptions={{ showUnderline: "hover", underlineStyle: "solid" }}
+            formatOptions={{ showUnderline: "hover" }}
             groupAggregationMode="none"
-            key="email"
+            key="Email"
             label="Email"
             position="center"
-            size={178.875}
+            size={209}
             summaryAggregationMode="none"
-          />
+          >
+            <Event
+              event="clickCell"
+              method="openUrl"
+              params={{ ordered: [{ url: "mailto:{{ item }}" }] }}
+              pluginId=""
+              type="util"
+              waitMs="0"
+              waitType="debounce"
+            />
+          </Column>
           <Column
-            id="8c678"
+            id="c367a"
             alignment="left"
             format="tag"
             formatOptions={{ automaticColors: true }}
             groupAggregationMode="none"
-            key="status"
+            key="Status"
             label="Status"
             placeholder="Select option"
             position="center"
-            size={167.390625}
+            size={224}
             summaryAggregationMode="none"
             valueOverride="{{ _.startCase(item) }}"
           />
           <Column
-            id="bd2e0"
+            id="34680"
             alignment="left"
-            format="string"
+            format="tag"
+            formatOptions={{ automaticColors: true }}
             groupAggregationMode="none"
-            key="dates"
-            label="Dates"
-            placeholder="Enter value"
+            key="Problem"
+            label="Problem"
+            placeholder="Select option"
             position="center"
             size={100}
             summaryAggregationMode="none"
+            valueOverride="{{ _.startCase(item) }}"
           />
           <ToolbarButton
             id="1a"
@@ -243,47 +255,52 @@
         />
       </Header>
       <Body>
-        <NumberInput
-          id="numberInput1"
-          currency="USD"
-          formDataKey="id"
-          inputValue={0}
-          label="ID"
-          labelPosition="top"
-          placeholder="Enter value"
-          showSeparators={true}
-          showStepper={true}
-          value={0}
-        />
         <TextInput
-          id="textInput3"
-          formDataKey="dates"
-          label="Dates"
-          labelPosition="top"
-          placeholder="Enter value"
-        />
-        <TextInput
-          id="textInput4"
-          formDataKey="email"
+          id="textInput6"
+          formDataKey="Email"
           iconBefore="bold/mail-send-envelope"
           label="Email"
           labelPosition="top"
           patternType="email"
           placeholder="you@example.com"
+          required={true}
         />
         <Select
           id="select1"
-          data="{{ getIssues.data }}"
           emptyMessage="No options"
-          formDataKey="status"
+          formDataKey="Status"
+          itemMode="static"
           label="Status"
           labelPosition="top"
-          labels="{{ item.status }}"
+          labels={null}
           overlayMaxHeight={375}
           placeholder="Select an option"
+          required={true}
           showSelectionIndicator={true}
-          values="{{ item.id }}"
-        />
+          values={null}
+        >
+          <Option id="02ae8" value="Solved" />
+          <Option id="4f9cd" value="Technician Assigned" />
+          <Option id="ff4ee" value="Pending" />
+        </Select>
+        <Select
+          id="select2"
+          emptyMessage="No options"
+          formDataKey="Problem"
+          itemMode="static"
+          label="Problem"
+          labelPosition="top"
+          labels={null}
+          overlayMaxHeight={375}
+          placeholder="Select an option"
+          required={true}
+          showSelectionIndicator={true}
+          values={null}
+        >
+          <Option id="310d5" value="Brakes" />
+          <Option id="1bfe1" value="Flat Tire" />
+          <Option id="3456b" value="Collision" />
+        </Select>
       </Body>
       <Footer>
         <Button
