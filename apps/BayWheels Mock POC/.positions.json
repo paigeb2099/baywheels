@@ -39,7 +39,7 @@
     "width": 4
   },
   "button7": {
-    "row": 15,
+    "row": 13.4,
     "col": 8,
     "height": 0.8,
     "width": 4
@@ -358,6 +358,7 @@
     "width": 2
   },
   "switch1": {
+    "row": 0.2,
     "col": 10,
     "height": 0.6,
     "width": 2
